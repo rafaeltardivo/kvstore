@@ -2,13 +2,6 @@
 
 A simple key-value store with HTTP API and transaction logging.
 
-## Recent Updates
-
-- Removed duplicate global variables and functions to avoid redeclaration errors.
-- Fixed method redeclaration in `FileTransactionLogger`.
-- Improved error handling in HTTP handlers to avoid potential panics.
-- Enhanced concurrency safety with proper mutex usage.
-
 ## Features
 
 - HTTP API for key-value operations.
