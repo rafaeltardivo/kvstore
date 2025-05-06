@@ -42,20 +42,15 @@ func keyValuePutHandler(w http.ResponseWriter, r *http.Request) {
 	key := vars["key"]
 
 	value, err := io.ReadAll(r.Body)
-	defer r.Body.Close()
-
 	if err != nil {
-		http.Error(w,
-			err.Error(),
-			http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	defer r.Body.Close()
 
 	err = Put(key, string(value))
 	if err != nil {
-		http.Error(w,
-			err.Error(),
-			http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 

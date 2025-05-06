@@ -44,14 +44,6 @@ func (l *FileTransactionLogger) Err() <-chan error {
 	return l.errors
 }
 
-func (l *FileTransactionLogger) WritePut(key, value string) {
-	// Something, something, logic
-}
-
-func (l *FileTransactionLogger) WriteDelete(key string) {
-	// Something, something, logic
-}
-
 func NewFileTransactionLogger(filename string) (TransactionLogger, error) {
 	file, err := os.OpenFile(filename, os.O_RDWR|os.O_APPEND|os.O_CREATE, 0755)
 	if err != nil {
